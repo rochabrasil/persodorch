@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ROCHA ARCH | OFICIAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Fredoka:wght@400;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --branco: #ffffff;
+            --preto: #1a1a1a;
+            --cinza-suave: #f0f2f5;
+            --cinza-rodape: #e0e0e0;
+            --borda-radius-lg: 30px;
+            --borda-radius-sm: 20px;
+            --borda-grossa: 4px solid var(--preto);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #ffffff; 
+            color: var(--preto);
+            font-family: 'Fredoka', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+            background-image: url('fundo.gif');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1; 
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+            animation: fadeInReveal 1s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeInReveal {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-box { margin-bottom: 50px; }
+
+        .logo-img {
+            width: 150px;
+            margin-bottom: 20px;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* --- Título REDES SOCIAIS com Texto BRANCO e Contorno PRETO --- */
+        h1 {
+            font-family: 'Oswald', sans-serif; 
+            font-size: 4rem; 
+            font-weight: 700;
+            
+            /* DEFINIÇÕES DE COR E CONTORNO SOLICITADAS */
+            color: var(--branco); /* Preenchimento Branco */
+            -webkit-text-stroke-width: 2px; /* Espessura do contorno */
+            -webkit-text-stroke-color: var(--preto); /* Cor do contorno Preto */
+            
+            text-transform: uppercase;
+            letter-spacing: 2px; 
+            
+            /* Sombra nítida para efeito 3D estilo cartoon */
+            text-shadow: 4px 4px 0px var(--preto);
+        }
+
+        .links-list {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .btn-link {
+            background: var(--branco);
+            border: var(--borda-grossa);
+            padding: 20px 30px;
+            border-radius: var(--borda-radius-lg);
+            text-decoration: none;
+            color: var(--preto);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 8px 0 var(--preto);
+            transition: all 0.2s ease;
+            position: relative;
+            top: 0;
+        }
+
+        .btn-link:hover {
+            top: 2px;
+            box-shadow: 0 6px 0 var(--preto);
+            background: var(--cinza-suave);
+        }
+
+        .btn-link:active {
+            top: 8px;
+            box-shadow: 0 0 0 var(--preto);
+        }
+
+        .form-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: var(--borda-grossa);
+            border-radius: var(--borda-radius-lg);
+            padding: 50px 40px;
+            box-shadow: 0 15px 0 rgba(0,0,0,0.1);
+            text-align: left;
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .input-group { margin-bottom: 25px; }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-left: 15px;
+            text-transform: uppercase;
+        }
+
+        input {
+            width: 100%;
+            padding: 18px 25px;
+            border-radius: var(--borda-radius-sm);
+            border: 3px solid #d1d1d1;
+            font-family: 'Nunito', sans-serif;
+            outline: none;
+        }
+
+        .players-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 25px;
+            background: var(--preto);
+            color: var(--branco);
+            border: none;
+            border-radius: var(--borda-radius-lg);
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 8px 0 #333;
+        }
+
+        /* --- Rodapé com Fundo Cinza --- */
+        footer {
+            background-color: var(--cinza-rodape);
+            border: var(--borda-grossa);
+            border-radius: var(--borda-radius-sm);
+            padding: 25px;
+            color: var(--preto); 
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 6px 0 rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 650px) {
+            h1 { font-size: 2.8rem; letter-spacing: 1px; -webkit-text-stroke-width: 1.5px; } /* Ajuste mobile */
+            .form-card { padding: 30px 20px; }
+            .players-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="container">
+        
+        <header class="header-box">
+            <img src="logorocha1.png" alt="ROCHA" class="logo-img">
+            <h1>REDES SOCIAIS</h1>
+        </header>
+
+        <nav class="links-list">
+            <a href="https://m.youtube.com/@rochaarch" target="_blank" class="btn-link">
+                <i class="fab fa-youtube"></i> YouTube Canal
+            </a>
+            <a href="https://www.instagram.com/rochaarch" target="_blank" class="btn-link">
+                <i class="fab fa-instagram"></i> Instagram Perfil
+            </a>
+            <a href="https://www.tiktok.com/@rocha.rch.gameplay" target="_blank" class="btn-link">
+                <i class="fab fa-tiktok"></i> TikTok Conteúdo
+            </a>
+            <a href="https://discord.gg/tEGwrMs789" target="_blank" class="btn-link">
+                <i class="fab fa-discord"></i> Discord Servidor
+            </a>
+            <a href="https://chat.whatsapp.com/J9Grx4ij860A63lyzfGvTI" target="_blank" class="btn-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp Grupo
+            </a>
+            <a href="https://m.twitch.tv/rochaarch/home" target="_blank" class="btn-link">
+                <i class="fab fa-twitch"></i> Twitch Live
+            </a>
+            <a href="https://www.facebook.com/RochaGameplayYT/" target="_blank" class="btn-link">
+                <i class="fab fa-facebook-f"></i> Facebook Página
+            </a>
+        </nav>
+
+        <section class="form-card">
+            <h2>INSCRIÇÃO PERSONALIZADA</h2>
+            <form action="https://formspree.io/f/myknqval" method="POST">
+                <div class="input-group">
+                    <label>NOME DO TIME / ORG</label>
+                    <input type="text" name="team_name" placeholder="Ex: Rocha Elite E-sports" required>
+                </div>
+                <div class="input-group">
+                    <label>ID DO LÍDER (DISCORD)</label>
+                    <input type="text" name="leader_discord" placeholder="SeuUser#0000" required>
+                </div>
+                <div class="players-grid">
+                    <div class="input-group"><label>JOGADOR 01</label><input type="text" name="p1_nick" placeholder="Nick In-Game" required></div>
+                    <div class="input-group"><label>JOGADOR 02</label><input type="text" name="p2_nick" placeholder="Nick In-Game" required></div>
+                    <div class="input-group"><label>JOGADOR 03</label><input type="text" name="p3_nick" placeholder="Nick In-Game" required></div>
+                    <div class="input-group"><label>JOGADOR 04</label><input type="text" name="p4_nick" placeholder="Nick In-Game" required></div>
+                </div>
+                <button type="submit" class="btn-submit">CONFIRMAR AGORA!</button>
+            </form>
+        </section>
+
+        <footer>
+            ROCHA ARCH &copy; 2026 // MOSTRE SEUS PODERES
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#333333", "#666666", "#1a1a1a"] },
+                "shape": { "type": "polygon", "polygon": { "nb_sides": 5 } },
+                "opacity": { "value": 0.3, "random": true },
+                "size": { "value": 6, "random": true },
+                "line_linked": { "enable": false },
+                "move": { "enable": true, "speed": 1.5, "direction": "bottom-right", "random": true, "out_mode": "out" }
+            },
+            "interactivity": { "events": { "resize": true } },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
