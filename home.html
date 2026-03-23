@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ROCHA ARCH | OFICIAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --branco: #ffffff;
+            --preto: #1a1a1a;
+            --cinza-footer: #e0e0e0;
+            --borda-radius-lg: 30px;
+            --borda-grossa: 4px solid var(--preto);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #ffffff;
+            color: var(--preto);
+            font-family: 'Fredoka', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Fundo GIF em opacidade baixa */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+            background: url('fundo.gif') center/cover no-repeat;
+            opacity: 0.1;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            padding: 40px 20px;
+            flex: 1; /* Empurra o footer para o final */
+        }
+
+        .logo-img {
+            width: 140px;
+            margin-bottom: 15px;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float { 50% { transform: translateY(-10px); } }
+
+        /* REDES SOCIAIS EM PRETO */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--preto);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .links-list { display: grid; gap: 12px; margin-bottom: 50px; }
+
+        .btn-link {
+            background: var(--branco);
+            border: var(--borda-grossa);
+            padding: 18px;
+            border-radius: var(--borda-radius-lg);
+            text-decoration: none;
+            color: var(--preto);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 6px 0 var(--preto);
+            transition: 0.2s;
+        }
+
+        .btn-link:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--preto); }
+
+        .form-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: var(--borda-grossa);
+            border-radius: var(--borda-radius-lg);
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0 10px 0 rgba(0,0,0,0.05);
+        }
+
+        h2 { text-align: center; margin-bottom: 25px; color: var(--preto); }
+
+        .input-group { margin-bottom: 15px; }
+        label { display: block; font-weight: 700; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase; }
+        
+        input {
+            width: 100%; padding: 14px; border-radius: 15px;
+            border: 2px solid #ccc; outline: none; font-family: 'Nunito', sans-serif;
+        }
+
+        .players-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+        .btn-submit {
+            width: 100%; padding: 20px; background: var(--preto); color: var(--branco);
+            border: none; border-radius: var(--borda-radius-lg); font-weight: 700;
+            text-transform: uppercase; margin-top: 20px; cursor: pointer;
+        }
+
+        /* RODAPÉ COM FUNDO CINZA */
+        footer {
+            width: 100%;
+            background-color: var(--cinza-footer);
+            padding: 20px;
+            text-align: center;
+            color: var(--preto);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 2px solid #ccc;
+        }
+
+        @media (max-width: 500px) {
+            .players-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <header>
+            <img src="logorocha1.png" alt="ROCHA" class="logo-img">
+            <h1>REDES SOCIAIS</h1>
+        </header>
+
+        <nav class="links-list">
+            <a href="https://m.youtube.com/@rochaarch" target="_blank" class="btn-link"><i class="fab fa-youtube"></i> YOUTUBE</a>
+            <a href="https://www.instagram.com/rochaarch" target="_blank" class="btn-link"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+            <a href="https://www.tiktok.com/@rocha.rch.gameplay" target="_blank" class="btn-link"><i class="fab fa-tiktok"></i> TIKTOK</a>
+            <a href="https://discord.gg/tEGwrMs789" target="_blank" class="btn-link"><i class="fab fa-discord"></i> DISCORD</a>
+            <a href="https://chat.whatsapp.com/J9Grx4ij860A63lyzfGvTI" target="_blank" class="btn-link"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+            <a href="https://www.facebook.com/RochaGameplayYT/" target="_blank" class="btn-link"><i class="fab fa-facebook-f"></i> FACEBOOK</a>
+        </nav>
+
+        <section class="form-card">
+            <h2>INSCRIÇÃO</h2>
+            <form action="https://formspree.io/f/myknqval" method="POST">
+                <div class="input-group"><label>TIME / ORG</label><input type="text" name="team" required></div>
+                <div class="input-group"><label>ID DISCORD</label><input type="text" name="discord" required></div>
+                <div class="players-grid">
+                    <div class="input-group"><label>JOGADOR 01</label><input type="text" name="p1" required></div>
+                    <div class="input-group"><label>JOGADOR 02</label><input type="text" name="p2" required></div>
+                    <div class="input-group"><label>JOGADOR 03</label><input type="text" name="p3" required></div>
+                    <div class="input-group"><label>JOGADOR 04</label><input type="text" name="p4" required></div>
+                </div>
+                <button type="submit" class="btn-submit">CONFIRMAR</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        ROCHA RCH PERSONALIZADA &copy; 2026 // MOSTRE SEUS PODERES
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 40 },
+                "color": { "value": "#333333" },
+                "shape": { "type": "polygon", "polygon": { "nb_sides": 6 } },
+                "opacity": { "value": 0.2 },
+                "size": { "value": 15, "random": true },
+                "move": { "enable": true, "speed": 1, "direction": "bottom", "out_mode": "out" }
+            }
+        });
+    </script>
+</body>
+</html>
